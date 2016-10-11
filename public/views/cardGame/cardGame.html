@@ -1,0 +1,36 @@
+<h1>{{cardGame.title}}</h1>
+
+<div class="alert alert-danger" role="alert" ng-hide="hide" ng-if="cardGame.error">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <span ng-bind="cardGame.errorMessage"></span>
+</div>
+<div class="alert alert-info" role="alert" ng-hide="hide" ng-if="cardGame.finished">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <span ng-bind="cardGame.successMessage"></span>
+</div>
+
+    <div>
+        <button class="btn btn-success" ng-click="cardGame.startHand()" ng-disabled="cardGame.startDisabled">Start Hand</button>
+        <button class="btn btn-info" ng-click="cardGame.guessHi()" value="hi" ng-disabled="cardGame.guessDisabled">Hi <i class = "glyphicon glyphicon-arrow-up" /></button>
+        <button class="btn btn-info" ng-click="cardGame.guessLo()" ng-disabled="cardGame.guessDisabled">Lo <i class = "glyphicon glyphicon-arrow-down" /></button>
+        <button class="btn btn-warning" ng-click="cardGame.pass(cardGame.getActivePlayer())" ng-disabled="cardGame.passDisabled">Pass Turn</button>
+        <button class="btn btn-danger" ng-click="cardGame.reset()">Reset Game</button>
+
+        <li><img ng-src="{{cardGame.newCard.image}}"/> </li>
+
+    </div>
+    <div>
+        Current Card Value: <span ng-bind="cardGame.newCard.value"></span><br>
+        Cards left in the deck: <span ng-bind="cardGame.cardsRemaining"></span><br>
+        Cards in the face up pile: <span ng-bind="cardGame.cardPile.length"></span><br>
+        Current Player: <span class="playerIndicator" ng-bind="cardGame.getActivePlayer().name"></span><br>
+        Current Player Score: <span ng-bind="cardGame.getActivePlayer().score"></span><br>
+        Current Player Correct Guesses: <span ng-bind="cardGame.getActivePlayer().correctGuesses"></span><br>
+
+        <ul ng-repeat = "player in ::cardGame.players track by $index">
+            <li> Player Name: <span ng-bind="player.name"></span> <br> <span ng-bind="player.name"></span> Score: <span ng-bind="player.score"></span> </li>
+        </ul>
+
+    </div>
+
+

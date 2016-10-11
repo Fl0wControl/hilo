@@ -1,0 +1,31 @@
+{
+  "name": "resources",
+  "authors": [
+    "Fl0wControl"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.8",
+    "angular-sanitize": "~1.5.8",
+    "angular-ui-router": "~0.3.1",
+    "bootstrap": "~3.3.6",
+    "webcomponentsjs": "~0.7.22",
+    "jquery": "~1.12",
+    "ngstorage": "^0.3.11"
+  },
+  "resolutions": {
+    "angular": "~1.5.8",
+    "jquery": "~1.12"
+  }
+}
